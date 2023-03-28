@@ -202,7 +202,7 @@ input::placeholder {
   top: 0;
   bottom: 0;
   margin: auto 0;
-  background: #cfebf9 url('sun2.png') no-repeat center;
+  background: #cfebf9 url('sun1.png') no-repeat center;
   background-size: contain;
   filter: var(--drop-shadow);
   transition: var(--transition-in);

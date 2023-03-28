@@ -83,7 +83,7 @@ main {
   padding: clamp(0.4rem, 3vw, 1rem);
 }
 .themer {
-  margin: 3rem auto;
+  margin: 3rem auto 1rem;
 }
 
 /* The switch - the box around the slider */
@@ -158,7 +158,7 @@ input:checked + .slider:before {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 3rem auto 2rem;
+  margin: 3rem auto 1rem;
 }
 
 .clock {
@@ -243,7 +243,7 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 4rem auto 0;
+  margin: 2rem auto 0;
   text-shadow: var(--text-shadow);
 }
 
