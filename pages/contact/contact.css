@@ -146,17 +146,17 @@ a {
 .slider:before {
   position: absolute;
   content: '';
-  height: 44px;
-  width: 44px;
+  height: 50px;
+  width: 50px;
   left: -10px;
   bottom: 4px;
   top: 0;
   bottom: 0;
   margin: auto 0;
-  background: #cfebf9 url('sun1.png') no-repeat center;
+  background: #0bc1ff url('sun1.png') no-repeat center;
   background-size: contain;
   filter: var(--drop-shadow);
-  transition: var(--transition);
+  transition: var(--transition-in);
 }
 
 input:checked + .slider {
