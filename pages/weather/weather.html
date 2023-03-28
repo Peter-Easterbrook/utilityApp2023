@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../favicon/favicon-16x16.png"
+    />
+
+    <link
+      rel="mask-icon"
+      href="../../favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="manifest" href="../../favicon/webmanifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0"
+    />
+    <meta name="msapplication-TileColor" content="#102128" />
+    <meta name="theme-color" content="#102128" />
+    <meta name="robots" content="noimageindex" />
+    <link rel="stylesheet" type="text/css" href="weather.css" />
+    <script src="weather.js" defer></script>
+    <title>weather</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="themer">
+        <label id="switch" class="switch">
+          <input type="checkbox" id="toggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div id="weather" class="weather-app">
+        <input
+          type="text"
+          autocomplete="off"
+          class="search-box"
+          placeholder="Weather..."
+          spellcheck="false"
+        />
+        <div class="location">
+          <div class="data-box">
+            <p>Location:</p>
+            <p class="city"></p>
+          </div>
+          <div class="data-box">
+            <p>Date:</p>
+            <p class="date"></p>
+          </div>
+        </div>
+        <div class="image">
+          <div class="weather-icon"></div>
+        </div>
+        <div class="current">
+          <div class="data-box">
+            <p>Temperature:</p>
+            <p class="temp"></p>
+          </div>
+          <div class="data-box">
+            <p>Weather:</p>
+            <p class="weather"></p>
+          </div>
+          <div class="data-box">
+            <p>Sunrise:</p>
+            <p class="sunrise"></p>
+          </div>
+          <div class="data-box">
+            <p>Sunset:</p>
+            <p class="sunset"></p>
+          </div>
+          <div class="data-box">
+            <p>Hi-lo:</p>
+            <p class="hi-low"></p>
+          </div>
+          <div class="data-box">
+            <p>Wind:</p>
+            <p class="wind"></p>
+          </div>
+          <div class="data-box">
+            <p>Humidity:</p>
+            <p class="humidity"></p>
+          </div>
+          <div class="data-box">
+            <p>Visibility:</p>
+            <p class="visibility"></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <nav>
+      <ul>
+        <li>
+          <a href="../../index.html">
+            <span class="material-symbols-outlined"> schedule </span></a
+          >
+        </li>
+        <li>
+          <a href="../todo/todo.html">
+            <span class="material-symbols-outlined"> list_alt </span>
+          </a>
+        </li>
+        <li>
+          <a class="active" href="../weather/weather.html">
+            <span class="material-symbols-outlined"> sunny_snowing </span>
+          </a>
+        </li>
+        <li>
+          <a href="../contact/contact.html">
+            <span class="material-symbols-outlined"> contact_mail </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <script>
+      const toggle = document.getElementById('toggle');
+      toggle.addEventListener('click', (e) => {
+        const html = document.querySelector('html');
+        if (html.classList.contains('dark')) {
+          html.classList.remove('dark');
+        } else {
+          html.classList.add('dark');
+        }
+      });
+    </script>
+    <script
+      src="https://kit.fontawesome.com/93b32f94da.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
