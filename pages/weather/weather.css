@@ -192,7 +192,6 @@ input:checked + .slider:before {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   transition: var(--transition-in);
 }
 .search-box::placeholder {
@@ -268,12 +267,13 @@ nav li {
   text-align: center;
   transition: var(--transition-out);
 }
-
-nav ul li p {
-  font-family: Encode, sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  margin: 2px 0;
+nav li .material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+  padding-top: 0.3rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 2rem;
+  transition: var(--transition-in);
 }
 
 nav ul li:hover,
