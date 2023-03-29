@@ -1,5 +1,5 @@
-# utilityApp2023
+## utilityApp2023
 JS tinker w/ clock, date, weather, todo etc
 
-## This app is just a JS tinler app with the above
-## If you can think of anything useful that I could add in please let me know.
+This app is just a JS tinker app for mobile with the above elements.
+If you can think of anything useful that I could add in please let me know.
