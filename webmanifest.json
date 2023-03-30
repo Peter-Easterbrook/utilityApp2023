@@ -1,6 +1,7 @@
 {
   "name": "UtilityApp2022",
   "short_name": "UtilityApp2022",
+  "start_url": "https://utility-app2023.vercel.app/",
   "icons": [
     {
       "src": "favicon/android-chrome-512x512.png",
