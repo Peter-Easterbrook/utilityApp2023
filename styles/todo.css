@@ -1,5 +1,5 @@
 .form {
-  width: min(330px, 100%);
+  width: min(400px, 100%);
   height: auto;
   overflow: hidden;
   display: flex;
@@ -9,7 +9,7 @@
   padding: 0.3rem;
 }
 .input-size {
-  max-width: 320px;
+  max-width: 330px;
   padding: 0.6rem 1rem;
   color: var(--primary-color);
   font-weight: 300;
@@ -33,7 +33,7 @@ input:focus {
   outline: none;
 }
 .actions {
-  width: min(23rem, 100%);
+  width: min(380px, 100%);
   padding: clamp(0.2rem, 2vw, 0.6rem);
   display: flex;
   justify-content: space-around;
@@ -52,7 +52,7 @@ input:focus {
   border-radius: 3rem;
   padding: 0 0.6rem;
   border: var(--border);
-  /* filter: var(--drop-shadow); */
+  color: var(--primary-color);
   cursor: pointer;
   transition: all 0.2s ease-out;
 }
@@ -106,7 +106,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
 }
 
 .table {
-  width: 100%;
+  max-width: 80vw;
   margin: 0 auto;
   color: var(--primary-color);
   border-collapse: collapse;
@@ -127,18 +127,18 @@ input[type='date']::-webkit-calendar-picker-indicator {
   text-shadow: var(--text-shadow);
 }
 
-.table th:last-child,
-.table td:last-child {
-  text-align: center;
-  width: 10%;
+.table th:first-of-type,
+.table td:first-of-type {
+  width: 70%;
 }
 .table th:nth-child(2),
 .table td:nth-child(2) {
   width: 20%;
 }
-.table th:first-of-type,
-.table td:first-of-type {
-  width: 70%;
+.table th:last-child,
+.table td:last-child {
+  text-align: center;
+  width: 10%;
 }
 .todo-list {
   font-weight: 100;
@@ -150,14 +150,20 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 @media screen and (max-width: 600px) {
   table {
-    width: 100%;
+    max-width: 100vw;
+    padding: 0;
   }
   .table th:first-of-type,
   .table td:first-of-type {
-    width: 55%;
+    width: 60%;
   }
   .table th:nth-child(2),
   .table td:nth-child(2) {
     width: 30%;
+  }
+  .table th:last-child,
+  .table td:last-child {
+    text-align: center;
+    max-width: 10%;
   }
 }
