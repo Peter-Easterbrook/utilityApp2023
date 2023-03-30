@@ -1,7 +1,7 @@
 {
   "name": "UtilityApp2022",
   "short_name": "UtilityApp2022",
-  "start_url": "/index.html?page=home",
+  "start_url": "/index.html",
   "icons": [
     {
       "src": "/favicon/android-chrome-512x512.png",
