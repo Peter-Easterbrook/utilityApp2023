@@ -97,6 +97,5 @@
     let year = d.getFullYear();
 
     return `${day} ${date} ${month} ${year} `;
-    // Add ${year} if you want the year to be displayed
   }
 })();
