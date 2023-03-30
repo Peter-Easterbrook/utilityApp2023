@@ -27,8 +27,8 @@
 #hours-hand {
   position: absolute;
   height: 64px;
-  right: 114px;
-  bottom: 116px;
+  right: 118px;
+  bottom: 117px;
   width: 4px;
   border-radius: 16px;
   filter: var(--drop-shadow);

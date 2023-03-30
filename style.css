@@ -62,10 +62,12 @@ html::-webkit-scrollbar {
 
 main {
   height: 100vh;
+  max-width: 340px;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
+  margin: 0 auto;
   overflow: hidden;
   padding: clamp(0.4rem, 3vw, 1rem) clamp(0.4rem, 3vw, 1rem);
 }
