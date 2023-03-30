@@ -102,7 +102,8 @@ class Store {
 document.addEventListener('DOMContentLoaded', Store.displayTodos);
 
 // Event Listener for add todo
-document.getElementById('todo-form').addEventListener('submit', function (e) {
+document.getElementById('todo-form').addEventListener('save', function (e) {
+  e.preventDefault();
   // Get form values
   const title = document.getElementById('title').value,
     date = document.getElementById('date').value;
@@ -151,8 +152,6 @@ document.getElementById('todo-list').addEventListener('click', function (e) {
 
   e.preventDefault();
 });
-
-// Dark mode toggle
 const toggle = document.getElementById('toggle');
 toggle.addEventListener('click', (e) => {
   const html = document.querySelector('html');
