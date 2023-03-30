@@ -1,13 +1,15 @@
 .form {
-  width: min(26rem, 100%);
+  width: min(330px, 100%);
+  height: auto;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0.6rem 1rem;
+  padding: 0.3rem;
 }
 .input-size {
-  width: 320px;
+  max-width: 320px;
   padding: 0.6rem 1rem;
   color: var(--primary-color);
   font-weight: 300;
@@ -55,23 +57,6 @@ input:focus {
   transition: all 0.2s ease-out;
 }
 
-/* .input-field {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  width: min(23rem, 100%);
-  margin: 0.4rem auto;
-} */
-
-/* .input-field label {
-  text-align: left;
-  color: var(--primary-color);
-  font-size: clamp(1.2rem, 3vw, 2rem);
-  font-weight: 300;
-  margin-bottom: 0.2rem;
-  text-shadow: var(--text-shadow);
-} */
 input[type='date']::-webkit-calendar-picker-indicator {
   filter: invert(1);
   margin: 0px;
@@ -79,8 +64,8 @@ input[type='date']::-webkit-calendar-picker-indicator {
 }
 
 #submit {
-  width: 3rem;
-  height: 3rem;
+  width: 2.4rem;
+  height: 2.4rem;
   background: var(--input-toggle);
   font-size: clamp(1rem, 2vw, 1.5rem);
   border-radius: 3rem;
@@ -125,6 +110,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
   margin: 0 auto;
   color: var(--primary-color);
   border-collapse: collapse;
+  overflow: scroll;
 }
 .table * {
   font-weight: 300;
