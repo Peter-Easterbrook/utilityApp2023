@@ -7,7 +7,7 @@
   margin: 0 auto;
   text-align: center;
   padding-bottom: 4rem;
-  overflow: hidden;
+  overflow: scroll;
 }
 .weather-app::-webkit-scrollbar {
   display: none;
@@ -48,7 +48,6 @@
 
 .current {
   margin-bottom: 1rem;
-  overflow: scroll;
 }
 
 .data-box {
