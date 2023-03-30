@@ -1,117 +1,10 @@
-:root {
-  --primary-color: #000;
-  --secondary-color: #fff;
-  --grad-light: #c4f0ff;
-  --grad-dark: #00bfff;
-  --input-toggle: #00bfff;
-  --input-location: #38cdff;
-  --border-color: #0083ae;
-  --drop-shadow: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
-  --transition-in: all 0.2s ease-out;
-  --transition-out: all 0.2s ease-in;
-  --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  --box-shadow-inset: inset 0 4px 6px rgba(0, 0, 0, 0.3);
-  --inset-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4);
-  --border: 1px solid #7cb8f5;
-}
-html {
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: #0074d5 #000;
-  font-weight: 300;
-  background-color: #000;
-  background: linear-gradient(to bottom, var(--grad-dark), var(--grad-light));
-}
-html.dark {
-  --primary-color: #fff;
-  --secondary-color: #000;
-  --grad-dark: #12181e;
-  --grad-light: #2f3f4f;
-  --input-toggle: #171f27;
-  --input-location: #283644;
-  --border-color: #7cb8f5;
-  --border: 1px solid #2f3f4f;
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-}
-
-*,
-::after,
-::before {
-  box-sizing: border-box;
-}
-* {
-  margin: 0;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  overflow: auto;
-  font-family: 'Encode Sans', sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
-  user-select: none;
-  overflow: auto;
-  -webkit-font-smoothing: antialiased;
-  animation: fadeInAnimation 2s ease-out 1 forwards;
-}
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-html::-webkit-scrollbar {
-  display: none;
-}
-
-html::placeholder {
-  font-weight: 200;
-  opacity: 0.9;
-}
-
-.container {
-  width: min(40rem, 100%);
-  margin: 0 auto;
-  padding: clamp(2rem, 4vw, 3rem) 0.6rem 2rem;
-}
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-  hyphens: auto;
-  text-align: justify;
-  font-weight: 300;
-  text-shadow: var(--text-shadow);
-}
-ul {
-  list-style: none;
-  padding: 0;
-}
-a {
-  text-decoration: none;
-  font-weight: 300;
-  color: inherit;
-  font-family: 'Encode Sans', sans-serif;
-}
-
 .form {
   width: min(26rem, 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  padding: 1rem;
+  margin: 0.6rem 1rem;
 }
 .input-size {
   width: 320px;
@@ -133,6 +26,10 @@ input::placeholder {
   color: var(--primary-color);
   font-weight: 200;
 }
+input:focus {
+  border: 1px solid var(--primary-color);
+  outline: none;
+}
 .actions {
   width: min(23rem, 100%);
   padding: clamp(0.2rem, 2vw, 0.6rem);
@@ -141,21 +38,18 @@ input::placeholder {
   align-items: center;
   text-align: center;
   vertical-align: middle;
-  margin-top: 1rem;
 }
 .actions * {
   -webkit-tap-highlight-color: transparent;
 }
 .dateInput {
-  width: 3rem;
-  height: 3rem;
-  padding: clamp(0.4rem, 2vw, 0.8rem);
-  border-radius: 3rem;
-  border: var(--border);
-  outline: none;
-  color: var(--primary-color);
-  font-size: clamp(0.8rem, 2vw, 1rem);
+  width: 10rem;
+  height: 2.4rem;
   background: var(--input-toggle);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  border-radius: 3rem;
+  padding: 0 0.6rem;
+  border: var(--border);
   /* filter: var(--drop-shadow); */
   cursor: pointer;
   transition: all 0.2s ease-out;

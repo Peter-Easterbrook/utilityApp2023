@@ -95,7 +95,10 @@
 .time {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 300;
-  letter-spacing: 6px;
+  letter-spacing: 4px;
+}
+.time span {
+  letter-spacing: 0;
 }
 
 .date {

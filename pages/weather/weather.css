@@ -1,12 +1,6 @@
-/* MobileFirst ************ */
-
-/* .toggle:focus {
-  outline: none;
-} */
-
 .weather-app {
   position: relative;
-  max-width: 340px;
+  width: min(26rem, 100%);
   width: 100%;
   height: 100%;
   display: flex;
@@ -16,6 +10,9 @@
   text-align: center;
   padding-bottom: 4rem;
   overflow: auto;
+}
+.weather-app::-webkit-scrollbar {
+  display: none;
 }
 
 .weather-app .search-box {
