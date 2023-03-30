@@ -48,7 +48,7 @@ input:focus {
   width: 10rem;
   height: 2.4rem;
   background: var(--input-toggle);
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
   border-radius: 3rem;
   padding: 0 0.6rem;
   border: var(--border);
@@ -67,7 +67,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
   width: 2.4rem;
   height: 2.4rem;
   background: var(--input-toggle);
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.4rem);
   border-radius: 3rem;
   padding: 0.4rem;
   border: var(--border);
@@ -118,12 +118,12 @@ input[type='date']::-webkit-calendar-picker-indicator {
 }
 .table th {
   text-align: left;
-  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
   text-shadow: var(--text-shadow);
 }
 .table td {
   text-align: left;
-  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-size: clamp(0.8rem, 3vw, 1rem);
   text-shadow: var(--text-shadow);
 }
 
@@ -133,12 +133,12 @@ input[type='date']::-webkit-calendar-picker-indicator {
 }
 .table th:nth-child(2),
 .table td:nth-child(2) {
-  width: 20%;
+  width: 25%;
 }
 .table th:last-child,
 .table td:last-child {
   text-align: center;
-  width: 10%;
+  width: 5%;
 }
 .todo-list {
   font-weight: 100;
