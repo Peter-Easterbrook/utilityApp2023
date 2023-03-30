@@ -32,6 +32,7 @@
       href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;300;400&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -39,51 +40,20 @@
     <meta name="msapplication-TileColor" content="#102128" />
     <meta name="theme-color" content="#102128" />
     <meta name="robots" content="noimageindex" />
-    <meta name="description" content="Todo List 2022" />
-    <script src="/pages/todo/todo.js" type="module" defer></script>
-    <link rel="stylesheet" type="text/css" href="/pages/todo/todo.css" />
-    <link rel="stylesheet" href="/style.css" />
-    <title>Todo List 2022</title>
+    <link rel="stylesheet" type="text/css" href="/styles/contact.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script src="/scripts/darkMode.js" type="module" defer></script>
+    <title>Contact</title>
   </head>
   <body>
-    <div class="themer">
-      <label id="switch" class="switch">
-        <input type="checkbox" id="toggle" />
-        <span class="slider round"></span>
-      </label>
-    </div>
-    <main class="container">
-      <form id="todo-form" class="form">
-        <div class="input-field">
-          <input
-            type="text"
-            id="title"
-            class="input-size"
-            placeholder="Todo..."
-          />
-        </div>
-        <div class="actions">
-          <div class="inputSwitch">
-            <input id="date" class="dateInput" type="date" />
-          </div>
-
-          <div class="inputSwitch">
-            <button type="submit" id="submit" class="button">
-              <i class="fas fa-highlighter"></i>
-            </button>
-          </div>
-        </div>
-      </form>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Todo</th>
-            <th>Date</th>
-            <th class="trash"><i class="fas fa-trash-alt"></i></th>
-          </tr>
-        </thead>
-        <tbody id="todo-list" class="todo-list"></tbody>
-      </table>
+    <main>
+      <div class="themer">
+        <label id="switch" class="switch">
+          <input type="checkbox" id="toggle" />
+          <span class="slider round"></span>
+        </label>
+        <h1>Contact Page</h1>
+      </div>
     </main>
     <nav>
       <ul>
@@ -93,22 +63,33 @@
           >
         </li>
         <li>
-          <a class="active" href="/pages/todo/todo.html">
+          <a href="/todo.html">
             <span class="material-symbols-outlined"> list_alt </span>
           </a>
         </li>
         <li>
-          <a href="/pages/weather/weather.html">
+          <a href="/weather.html">
             <span class="material-symbols-outlined"> sunny_snowing </span>
           </a>
         </li>
         <li>
-          <a href="/pages/contact/contact.html">
+          <a class="active" href="/contact.html">
             <span class="material-symbols-outlined"> contact_mail </span>
           </a>
         </li>
       </ul>
     </nav>
+    <script>
+      const toggle = document.getElementById('toggle');
+      toggle.addEventListener('click', (e) => {
+        const html = document.querySelector('html');
+        if (html.classList.contains('dark')) {
+          html.classList.remove('dark');
+        } else {
+          html.classList.add('dark');
+        }
+      });
+    </script>
     <script
       src="https://kit.fontawesome.com/93b32f94da.js"
       crossorigin="anonymous"
