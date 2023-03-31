@@ -12,7 +12,7 @@ class UI {
     const row = document.createElement('tr');
     // Insert cols
     row.innerHTML = `
-      <td >${todo.title}</td>
+      <td>${todo.title}</td>
       <td>${todo.date}</td>
       <td><a href="#" class="delete">❌<a></td>
     `;
@@ -35,9 +35,7 @@ class UI {
     container.insertBefore(div, form);
 
     // Timeout after 3 sec
-    setTimeout(function () {
-      document.querySelector('.alert').remove();
-    }, 3000);
+    setTimeout(() => document.querySelector('.alert').remove(), 3000);
   }
 
   deleteTodo(target) {
@@ -102,14 +100,13 @@ class Store {
 document.addEventListener('DOMContentLoaded', Store.displayTodos);
 
 // Event Listener for add todo
-document.getElementById('todo-form').addEventListener('save', function (e) {
-  e.preventDefault();
+document.getElementById('todo-form').addEventListener('submit', function (e) {
   // Get form values
   const title = document.getElementById('title').value,
     date = document.getElementById('date').value;
   // time = document.getElementById('time').value;
 
-  // Instantiate todo
+  // Instantiate todoSS
   const todo = new Todo(title, date);
 
   // Instantiate UI
@@ -151,13 +148,4 @@ document.getElementById('todo-list').addEventListener('click', function (e) {
   ui.showAlert('Todo removed!', 'success');
 
   e.preventDefault();
-});
-const toggle = document.getElementById('toggle');
-toggle.addEventListener('click', (e) => {
-  const html = document.querySelector('html');
-  if (html.classList.contains('dark')) {
-    html.classList.remove('dark');
-  } else {
-    html.classList.add('dark');
-  }
 });
