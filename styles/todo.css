@@ -1,15 +1,15 @@
 .form {
-  width: min(400px, 100%);
+  width: min(500px, 100%);
   height: auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.3rem;
+  padding: 0.4rem 0.6rem;
 }
 .input-size {
-  max-width: 330px;
+  max-width: min(400px, 100%);
   padding: 0.6rem 1rem;
   color: var(--primary-color);
   font-weight: 300;
@@ -17,7 +17,7 @@
   outline: none;
   border-radius: 0.3rem;
   font-size: 1.2rem;
-  margin-bottom: 0.6rem;
+  margin: 1rem 0.4rem;
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -33,13 +33,13 @@ input:focus {
   outline: none;
 }
 .actions {
-  width: min(380px, 100%);
+  max-width: min(400px, 100%);
   padding: clamp(0.2rem, 2vw, 0.6rem);
+  margin: 1rem 0.4rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
-  vertical-align: middle;
 }
 .actions * {
   -webkit-tap-highlight-color: transparent;
@@ -51,6 +51,7 @@ input:focus {
   font-size: clamp(1rem, 2vw, 1.2rem);
   border-radius: 3rem;
   padding: 0 0.6rem;
+  margin-right: 1rem;
   border: var(--border);
   color: var(--primary-color);
   cursor: pointer;
@@ -106,7 +107,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
 }
 
 .table {
-  max-width: 80vw;
+  max-width: 90vw;
   margin: 0 auto;
   color: var(--primary-color);
   border-collapse: collapse;
