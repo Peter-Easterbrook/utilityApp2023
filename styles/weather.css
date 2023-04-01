@@ -1,19 +1,19 @@
 .weather-app {
   position: relative;
-  width: min(400px, 100%);
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
   text-align: center;
-  padding: 0 0.4rem;
+  padding: 0 0.2rem;
   overflow: scroll;
 }
 .weather-app::-webkit-scrollbar {
   display: none;
 }
 
-.weather-app .search-box {
+.search-box {
   max-width: 380px;
   padding: 0.6rem 1rem;
   color: var(--primary-color);
@@ -38,10 +38,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: min(400px, 100%);
+  width: min(590px, 100%);
   margin: 0 auto;
   text-align: center;
-  padding: 0 0.4rem;
 }
 
 .location,
