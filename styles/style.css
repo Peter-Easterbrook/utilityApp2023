@@ -68,8 +68,8 @@ main {
   text-align: center;
   align-items: center;
   margin: 0 auto;
-  overflow: hidden;
   padding: 0 0.4rem;
+  overflow: hidden;
 }
 p,
 h1,
