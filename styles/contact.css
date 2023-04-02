@@ -1,0 +1,224 @@
+.contact {
+  width: 600px;
+  max-width: 100%;
+}
+.main-header {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-family: inherit;
+  text-shadow: var(--text-shadow);
+}
+
+#todo-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.task-name {
+  max-width: min(400px, 100%);
+  padding: 0.6rem 1rem;
+  outline: none;
+  border-radius: 0.3rem;
+  font-size: 1.2rem;
+  margin: 1rem 0.4rem;
+  color: var(--primary-color);
+  font-family: inherit;
+  font-weight: 200;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-shadow: var(--text-shadow);
+  transition: var(--transition-in);
+}
+.task-name::placeholder {
+  font-family: inherit;
+  color: var(--primary-color);
+  font-weight: 200;
+}
+
+.addTodo {
+  padding: 0.5rem 0.6rem;
+  outline: none;
+  border-radius: 0.3rem;
+  font-size: 1.2rem;
+  margin: 1rem 0.4rem;
+  color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: inherit;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-shadow: var(--text-shadow);
+  transition: var(--transition-in);
+  cursor: pointer;
+}
+.addTodo:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+.addTodo:active {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(0.95);
+}
+.addSvg {
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: sub;
+  stroke: var(--border-color);
+  transition: var(--transition-in);
+}
+.stats {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+.stats li {
+  display: flex;
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-shadow: var(--text-shadow);
+  margin: 0 0.2rem;
+}
+.stats li span {
+  font-weight: 300;
+  background-color: var(--grad-light);
+  color: var(--primary-color);
+  text-shadow: var(--text-shadow);
+  padding: 3px 6px;
+  border-radius: 0.2rem 0 0 0.2rem;
+}
+.stats li span:nth-child(even) {
+  background-color: var(--grad-dark);
+  border-radius: 0 0.2rem 0.2rem 0;
+  width: fit-content;
+}
+.todos {
+  margin-bottom: 4rem;
+}
+.todos li {
+  margin-bottom: 1rem;
+  padding: 0.6rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.3rem;
+  color: var(--primary-color);
+  text-shadow: var(--text-shadow);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: var(--transition-in);
+}
+
+.todos li.complete {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--border-color);
+}
+
+.todos li div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-toggle);
+
+  cursor: pointer;
+  transition: var(--transition-in);
+}
+
+input[type='checkbox']::before {
+  content: '\2713';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.2rem;
+  margin-top: 0.2rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  width: 1rem;
+  height: 1rem;
+  transform: scale(0);
+  transition: var(--transition-in);
+}
+
+input[type='checkbox']:checked {
+  background-color: var(--grad-light);
+}
+input[type='checkbox']:checked::before {
+  transform: scale(1);
+}
+
+input[type='checkbox']:focus {
+  outline: none;
+}
+
+.todos li button {
+  border: none;
+  background: transparent;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  padding: 0.25rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: var(--transition-in);
+}
+.todos li button svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  transition: var(--transition-out);
+  fill: #e10600;
+  stroke: rgba(0, 0, 0, 0.4);
+}
+
+.todos li button svg path {
+  transition: var(--transition-in);
+}
+.todos li button:hover svg {
+  transform: scale(1.2);
+  transition: var(--transition-in);
+}
+.todos li button:active svg {
+  transform: scale(0.8);
+}
+
+.todos li span {
+  font-weight: 300;
+  color: var(--primary-color);
+  border-radius: 0.3rem;
+  padding: 2px;
+  transition: var(--transition-out);
+}
+
+.todos li span:focus {
+  background-color: var(--grad-light);
+  outline: none;
+}
+
+.todos li span[contenteditable]:hover {
+  background-color: var(--grad-light);
+  outline: none;
+}

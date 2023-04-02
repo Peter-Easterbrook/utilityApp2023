@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+     <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="favicon/apple-touch-icon.png"
@@ -42,17 +43,51 @@
     <meta name="robots" content="noimageindex" />
     <link rel="stylesheet" type="text/css" href="/styles/contact.css" />
     <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+    <script src="scripts/contact.js" type="application/javascript" defer></script>
     <title>Contact</title>
   </head>
   <body>
-    <main>
+    <main class="contact">
       <div class="themer">
         <label id="switch" class="switch">
           <input type="checkbox" id="toggle" />
           <span class="slider round"></span>
         </label>
-        <h1>Contact Page</h1>
-      </div>
+        <header id="main-header" class="main-header">
+      <form action="" id="todo-form">
+              <input
+                type="text"
+                name="task-name"
+                id=""
+                placeholder="Todo..."
+                autofocus
+                class="task-name"
+              />
+              <button type="submit" class="addTodo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="addSvg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              </button>
+            </form>
+        </header>
+        <section>         
+            <ul class="stats">
+              <li>
+                <span>Remaining:</span>
+                <span id="remaining-tasks">0</span>
+              </li>
+              <li>
+                <span>Completed:</span>
+                <span id="completed-tasks">0</span>
+              </li>
+              <li>
+                <span>Total:</span>
+                <span id="total-tasks">0</span>
+              </li>
+            </ul>
+          </section>
+          <div>
+          <ul class="todos"></ul>
+        </div>
     </main>
     <nav>
       <ul>
@@ -78,20 +113,18 @@
         </li>
       </ul>
     </nav>
-    <script>
-      const toggle = document.getElementById('toggle');
-      toggle.addEventListener('click', (e) => {
-        const html = document.querySelector('html');
-        if (html.classList.contains('dark')) {
-          html.classList.remove('dark');
-        } else {
-          html.classList.add('dark');
-        }
-      });
-    </script>
-    <script
-      src="https://kit.fontawesome.com/93b32f94da.js"
-      crossorigin="anonymous"
-    ></script>
+
+    
+<script>
+  const toggle = document.getElementById('toggle');
+  toggle.addEventListener('click', (e) => {
+    const html = document.querySelector('html');
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark');
+    } else {
+      html.classList.add('dark');
+    }
+  });
+</script>
   </body>
 </html>

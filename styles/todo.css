@@ -11,13 +11,12 @@
 .input-size {
   max-width: min(400px, 100%);
   padding: 0.6rem 1rem;
-  color: var(--primary-color);
   font-weight: 300;
-  border: var(--border);
   outline: none;
   border-radius: 0.3rem;
   font-size: 1.2rem;
   margin: 1rem 0.4rem;
+  color: var(--primary-color);
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -73,12 +72,14 @@ input[type='date']::-webkit-calendar-picker-indicator {
   padding: 0.4rem;
   border: var(--border);
   cursor: pointer;
-  /* filter: var(--drop-shadow); */
+  font-weight: lighter;
   transition: all 0.2s ease-out;
 }
-.fa-highlighter {
-  font-size: 1.4rem;
-  color: var(--primary-color);
+#save span {
+  vertical-align: middle;
+  color: #08ff08;
+  font-size: 1.6rem;
+  filter: var(--drop-shadow);
 }
 .success,
 .error {
@@ -87,7 +88,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
   padding: clamp(0.2rem, 2vw, 0.6rem) 1rem;
   border-radius: 3rem;
   margin: 0.4rem auto;
-  border: 1px solid #fff;
+  border: var(--border);
   /* filter: var(--drop-shadow); */
 }
 .success {
@@ -102,8 +103,6 @@ input[type='date']::-webkit-calendar-picker-indicator {
 .delete {
   text-decoration: none;
   font-size: clamp(1rem, 2vw, 1.4rem);
-  /* margin-left: auto; */
-  /* text-align: right; */
 }
 
 .table {
@@ -145,8 +144,18 @@ input[type='date']::-webkit-calendar-picker-indicator {
   font-weight: 100;
 }
 
-.fa-trash-alt {
-  color: red;
+.trash {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.trash span {
+  vertical-align: middle;
+  color: #e10600;
+  font-size: 1.6rem;
+  padding-top: 2px;
+  filter: var(--drop-shadow);
 }
 
 @media screen and (max-width: 600px) {
