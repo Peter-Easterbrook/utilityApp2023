@@ -64,6 +64,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
 }
 
 #save {
+  position: relative;
   width: 2.4rem;
   height: 2.4rem;
   background: var(--input-toggle);
@@ -76,7 +77,10 @@ input[type='date']::-webkit-calendar-picker-indicator {
   transition: all 0.2s ease-out;
 }
 #save span {
-  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #08ff08;
   font-size: 1.6rem;
   filter: var(--drop-shadow);
