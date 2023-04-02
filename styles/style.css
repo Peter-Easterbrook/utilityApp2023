@@ -10,7 +10,7 @@
   --transition-in: all 0.2s ease-out;
   --transition-out: all 0.2s ease-in;
   --text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  --box-shadow-inset: inset 0 4px 6px rgba(0, 0, 0, 0.3);
+  --box-shadow-inset: inset 0 2px 3px rgba(0, 0, 0, 0.3);
   --inset-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4);
   --border: 1px solid #7cb8f5;
 }
@@ -133,14 +133,14 @@ a {
 .slider:before {
   position: absolute;
   content: '';
-  height: 50px;
-  width: 50px;
+  height: 55px;
+  width: 55px;
   left: -10px;
   bottom: 4px;
   top: 0;
   bottom: 0;
   margin: auto 0;
-  background: #0bc1ff url('../public/Moon.png') no-repeat center;
+  background: transparent url('../public/Moon.png') no-repeat center;
   background-size: contain;
   filter: var(--drop-shadow);
   transition: var(--transition-in);
@@ -154,7 +154,9 @@ input:checked + .slider:before {
   -webkit-transform: translateX(35px);
   -ms-transform: translateX(35px);
   transform: translateX(35px);
-  background: #12252d url('../public/sun1.png') no-repeat center;
+  height: 60px;
+  width: 60px;
+  background: transparent url('../public/sun1.png') no-repeat center;
   background-size: contain;
   filter: var(--drop-shadow);
 }

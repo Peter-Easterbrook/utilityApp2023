@@ -27,8 +27,8 @@
 #hours-hand {
   position: absolute;
   height: 64px;
-  right: 117px;
-  bottom: 117px;
+  right: 119px;
+  bottom: 119px;
   width: 4px;
   border-radius: 16px;
   filter: var(--drop-shadow);
@@ -41,8 +41,8 @@
 #minutes-hand {
   position: absolute;
   height: 105px;
-  right: 116px;
-  bottom: 118px;
+  right: 119px;
+  bottom: 119px;
   width: 2px;
   border-radius: 3px;
   filter: var(--drop-shadow);
@@ -105,7 +105,7 @@
 
 .date {
   display: inline-block;
-  font-size: clamp(1.3rem, 2.4vw, 2.2rem);
+  font-size: clamp(1.2rem, 2.4vw, 2rem);
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -117,7 +117,7 @@
   background-color: var(--primary-color);
   color: #ff6600;
   padding: clamp(0.2rem, 2vw, 0.4rem) clamp(0.8rem, 2vw, 1rem);
-  border-radius: 50%;
+  border-radius: 100%;
   font-weight: 500;
   font-size: clamp(1.2rem, 2.4vw, 2.2rem);
   filter: var(--drop-shadow);
