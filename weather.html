@@ -43,13 +43,14 @@
     <link rel="stylesheet" type="text/css" href="/styles/weather.css" />
     <link rel="stylesheet" type="text/css" href="/styles/style.css" />
     <script src="/scripts/weather.js" defer></script>
+    <script src="/scripts/darkMode.js" defer></script>
     <title>Weather</title>
   </head>
   <body>
     <main>
       <div class="themer">
         <label id="switch" class="switch">
-          <input type="checkbox" id="toggle" />
+          <input type="checkbox" id="toggle" onclick="toggleDarkMode()" />
           <span class="slider round"></span>
         </label>
       </div>

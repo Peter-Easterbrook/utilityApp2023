@@ -37,7 +37,9 @@
     <meta name="robots" content="noimageindex" />
     <link rel="stylesheet" type="text/css" href="/styles/clock.css" />
     <link rel="stylesheet" type="text/css" href="/styles/style.css" />
-    <script src="/scripts/clock.js"  defer></script>
+    <script src="/scripts/clock.js" type="application/javascript" defer></script>
+    <script src="/scripts/darkMode.js" type="application/javascript" defer></script>
+
 
       <title>2023 Mobile App</title>
   </head>
@@ -45,7 +47,7 @@
     <main>
       <div class="themer">
         <label id="switch" class="switch">
-          <input type="checkbox" id="toggle" />
+          <input type="checkbox" id="toggle" onclick="toggleDarkMode()" />
           <span class="slider round"></span>
         </label>
       </div>

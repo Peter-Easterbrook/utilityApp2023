@@ -22,7 +22,7 @@ html {
   background-color: #000;
   background: linear-gradient(to bottom, var(--grad-dark), var(--grad-light));
 }
-html.dark {
+.dark {
   --primary-color: #fff;
   --secondary-color: #000;
   --grad-dark: #12181e;
