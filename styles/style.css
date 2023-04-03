@@ -201,6 +201,7 @@ nav li .material-symbols-outlined {
   text-decoration: none;
   color: var(--primary-color);
   font-size: 2rem;
+  font-weight: 200;
   transition: var(--transition-in);
 }
 
@@ -208,4 +209,16 @@ nav ul li:hover .material-symbols-outlined,
 nav ul li a.active .material-symbols-outlined {
   color: var(--border-color);
   transition: var(--transition-in);
+  animation: pulse 3s infinite;
+}
+@keyframes pulse {
+  0% {
+    font-variation-settings: 'wght' 100;
+  }
+  50% {
+    font-variation-settings: 'wght' 700;
+  }
+  100% {
+    font-variation-settings: 'wght' 100;
+  }
 }
