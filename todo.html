@@ -42,19 +42,15 @@
     <meta name="description" content="Todo List 2022" />
     <link rel="stylesheet" type="text/css" href="/styles/todo.css" />
     <link rel="stylesheet" type="text/css" href="/styles/style.css" />
-    <script src="/scripts/todo.js" type="application/javascript" defer></script>
-    <script
-      src="/scripts/darkMode.js"
-      type="application/javascript"
-      defer
-    ></script>
+    <script src="/scripts/todo.js" defer></script>
+    <script src="/scripts/darkMode.js" defer></script>
     <title>Todo List 2022</title>
   </head>
   <body>
-    <main class="container">
+    <main>
       <div class="themer">
         <label id="switch" class="switch">
-          <input type="checkbox" id="toggle" onclick="toggleDarkMode()" />
+          <input type="checkbox" id="toggle" />
           <span class="slider round"></span>
         </label>
       </div>
@@ -79,7 +75,7 @@
         </div>
       </form>
       <table class="table">
-        <thead>
+        <thead class="todo-list">
           <tr>
             <th>Todo</th>
             <th>Date</th>
@@ -109,8 +105,8 @@
           </a>
         </li>
         <li>
-          <a href="contact.html">
-            <span class="material-symbols-outlined"> contact_mail </span>
+          <a href="newTodo.html">
+            <span class="material-symbols-outlined"> dynamic_form </span>
           </a>
         </li>
       </ul>

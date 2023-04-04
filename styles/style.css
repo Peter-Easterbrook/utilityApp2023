@@ -63,6 +63,7 @@ html::-webkit-scrollbar {
 
 main {
   min-height: 100%;
+  width: 100%;
   max-width: 620px;
   display: flex;
   flex-direction: column;
@@ -109,7 +110,7 @@ a {
 }
 
 /* Hide default HTML checkbox */
-.switch input {
+.switch #toggle {
   opacity: 0;
   width: 0;
   height: 0;
@@ -146,11 +147,11 @@ a {
   transition: var(--transition-in);
 }
 
-input:checked + .slider {
+#toggle:checked + .slider {
   background-color: var(--input-location);
 }
 
-input:checked + .slider:before {
+#toggle:checked + .slider:before {
   -webkit-transform: translateX(35px);
   -ms-transform: translateX(35px);
   transform: translateX(35px);

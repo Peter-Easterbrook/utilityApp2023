@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
-     <link
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
+    <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="favicon/apple-touch-icon.png"
@@ -41,54 +41,66 @@
     <meta name="msapplication-TileColor" content="#102128" />
     <meta name="theme-color" content="#102128" />
     <meta name="robots" content="noimageindex" />
-    <link rel="stylesheet" type="text/css" href="/styles/contact.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/newTodo.css" />
     <link rel="stylesheet" type="text/css" href="/styles/style.css" />
-    <script src="scripts/contact.js" type="application/javascript" defer></script>
-    <script src="scripts/darkMode.js" type="application/javascript" defer></script>
-    <title>Contact</title>
+    <script src="scripts/newTodo.js" defer></script>
+    <script src="scripts/darkMode.js" defer></script>
+    <title>newTodo</title>
   </head>
   <body>
-    <main class="contact">
+    <main class="newTodo">
       <div class="themer">
         <label id="switch" class="switch">
-          <input type="checkbox" id="toggle" onclick="toggleDarkMode()"/>
+          <input type="checkbox" id="toggle" />
           <span class="slider round"></span>
         </label>
-        <header id="main-header" class="main-header">
-      <form action="" id="todo-form">
-              <input
-                type="text"
-                name="task-name"
-                id=""
-                placeholder="Todo..."
-                autofocus
-                class="task-name"
+      </div>
+      <header id="main-header" class="main-header">
+        <form id="todo-form">
+          <input
+            type="text"
+            name="task-name"
+            placeholder="Todo..."
+            autofocus
+            class="task-name"
+          />
+          <button type="submit" class="addTodo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="addSvg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
               />
-              <button type="submit" class="addTodo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="addSvg">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              </button>
-            </form>
-        </header>
-        <section>         
-            <ul class="stats">
-              <li>
-                <span>Remaining:</span>
-                <span id="remaining-tasks">0</span>
-              </li>
-              <li>
-                <span>Completed:</span>
-                <span id="completed-tasks">0</span>
-              </li>
-              <li>
-                <span>Total:</span>
-                <span id="total-tasks">0</span>
-              </li>
-            </ul>
-          </section>
-          <div>
-          <ul class="todos"></ul>
-        </div>
+            </svg>
+          </button>
+        </form>
+      </header>
+      <div>
+        <ul class="stats">
+          <li>
+            <span>Remaining:</span>
+            <span id="remaining-tasks">0</span>
+          </li>
+          <li>
+            <span>Completed:</span>
+            <span id="completed-tasks">0</span>
+          </li>
+          <li>
+            <span>Total:</span>
+            <span id="total-tasks">0</span>
+          </li>
+        </ul>
+      </div>
+      <div class="todo-list">
+        <ul class="todos"></ul>
+      </div>
     </main>
     <nav>
       <ul>
@@ -108,14 +120,11 @@
           </a>
         </li>
         <li>
-          <a class="active" href="contact.html">
-            <span class="material-symbols-outlined"> contact_mail </span>
+          <a class="active" href="newTodo.html">
+            <span class="material-symbols-outlined"> dynamic_form </span>
           </a>
         </li>
       </ul>
     </nav>
-
-    
-
   </body>
 </html>
