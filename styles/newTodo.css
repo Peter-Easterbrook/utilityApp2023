@@ -3,7 +3,6 @@
   max-width: 600px;
 }
 .main-header {
-  margin-top: 2rem;
   font-size: 1.2rem;
   letter-spacing: 1px;
   font-weight: 300;
@@ -141,6 +140,7 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-tap-highlight-color: transparent;
   transition: var(--transition-in);
 }
 
