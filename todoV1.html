@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -33,7 +32,6 @@
       href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;300;400&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -41,66 +39,53 @@
     <meta name="msapplication-TileColor" content="#102128" />
     <meta name="theme-color" content="#102128" />
     <meta name="robots" content="noimageindex" />
-    <link rel="stylesheet" type="text/css" href="/styles/newTodo.css" />
+    <meta name="description" content="Todo List 2022" />
+    <link rel="stylesheet" type="text/css" href="/styles/todo.css" />
     <link rel="stylesheet" type="text/css" href="/styles/style.css" />
-    <script src="scripts/newTodo.js" defer></script>
-    <script src="scripts/darkMode.js" defer></script>
-    <title>newTodo</title>
+    <script src="/scripts/todo.js" defer></script>
+    <script src="/scripts/darkMode.js" defer></script>
+    <title>Todo List 2022</title>
   </head>
   <body>
-    <main class="newTodo">
+    <main>
       <div class="themer">
         <label id="switch" class="switch">
           <input type="checkbox" id="toggle" />
           <span class="slider round"></span>
         </label>
       </div>
-      <header id="main-header" class="main-header">
-        <form id="todo-form">
-          <input
-            type="text"
-            name="task-name"
-            placeholder="Todo..."
-            autofocus
-            class="task-name"
-          />
-          <button type="submit" class="addTodo">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="addSvg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          </button>
-        </form>
-      </header>
-      <div>
-        <ul class="stats">
-          <li>
-            <span>Pending:</span>
-            <span id="remaining-tasks">0</span>
-          </li>
-          <li>
-            <span>Started:</span>
-            <span id="completed-tasks">0</span>
-          </li>
-          <li>
-            <span>Total:</span>
-            <span id="total-tasks">0</span>
-          </li>
-        </ul>
-      </div>
-      <div class="todo-list">
-        <ul class="todos"></ul>
-      </div>
+      <form id="todo-form" class="form">
+        <input
+          type="text"
+          id="title"
+          class="input-size"
+          placeholder="Todo..."
+        />
+
+        <div class="actions">
+          <div class="inputSwitch">
+            <input id="date" class="dateInput" type="date" />
+          </div>
+
+          <div class="inputSwitch">
+            <button id="save" type="submit">
+              <span class="material-symbols-outlined"> add_circle </span>
+            </button>
+          </div>
+        </div>
+      </form>
+      <table class="table">
+        <thead class="todo-list">
+          <tr>
+            <th>Todo</th>
+            <th>Date</th>
+            <th class="trash">
+              <span class="material-symbols-outlined"> delete </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="todo-list" class="todo-list"></tbody>
+      </table>
     </main>
     <nav>
       <ul>
@@ -110,7 +95,7 @@
           >
         </li>
         <li>
-          <a href="shoppng.html">
+          <a class="active" href="shoppng.html">
             <span class="material-symbols-outlined"> list_alt </span>
           </a>
         </li>
@@ -120,7 +105,7 @@
           </a>
         </li>
         <li>
-          <a class="active" href="newTodo.html">
+          <a href="newTodo.html">
             <span class="material-symbols-outlined"> dynamic_form </span>
           </a>
         </li>

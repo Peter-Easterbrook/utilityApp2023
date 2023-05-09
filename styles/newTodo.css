@@ -24,7 +24,7 @@
   max-width: min(400px, 100%);
   padding: 0.6rem 1rem;
   outline: none;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
   font-size: 1.2rem;
   margin: 1rem 0.4rem;
   color: var(--primary-color);
@@ -32,7 +32,6 @@
   font-weight: 200;
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   font-weight: 300;
   letter-spacing: 1px;
@@ -48,13 +47,12 @@
 .addTodo {
   padding: 0.3rem 0.3rem;
   outline: none;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
   font-size: 1.2rem;
   margin: 1rem 0.4rem;
   color: var(--primary-color);
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   font-family: inherit;
   font-weight: 200;
@@ -133,14 +131,12 @@
   width: 90%;
   margin-bottom: 1rem;
   padding: 0.6rem 1rem;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
   color: var(--primary-color);
   text-shadow: var(--text-shadow);
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  -webkit-tap-highlight-color: transparent;
   transition: var(--transition-in);
 }
 
@@ -155,8 +151,6 @@
 }
 
 input[type='checkbox'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   margin: 0;
   flex: 0 0 1.5rem;
@@ -228,8 +222,9 @@ input[type='checkbox']:focus {
 .todos li span {
   font-weight: 300;
   color: var(--primary-color);
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
   padding: 2px;
+  white-space: nowrap;
   transition: var(--transition-out);
 }
 

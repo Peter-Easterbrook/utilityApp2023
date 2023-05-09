@@ -13,7 +13,7 @@
   padding: 0.6rem 1rem;
   font-weight: 300;
   outline: none;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
   font-size: 1.2rem;
   margin: 1rem 0.4rem;
   color: var(--primary-color);
