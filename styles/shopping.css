@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 600px;
-}
-
 .edit-mode {
   color: #ccc;
 }
@@ -90,7 +80,7 @@
 
 .form-input-filter {
   margin-top: 20px;
-  width: 100%;
+  width: min(500px, 100% - 1rem);
   font-size: 18px;
   padding: 10px;
   font-family: inherit;
@@ -122,10 +112,42 @@
   cursor: pointer;
 }
 
+.text-red {
+  color: red;
+}
+
+/* Items */
+
+.items {
+  width: min(60ch, 100% - 1rem);
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.4rem;
+}
+
+.items li {
+  display: flex;
+  justify-content: space-between;
+  width: min(55ch, 100% - 1rem);
+  margin: 4px 0;
+  font-weight: 200;
+  padding: 0.6rem 2rem;
+  border-radius: var(--border-radius);
+  color: var(--primary-color);
+  text-shadow: var(--text-shadow);
+  background: rgba(255, 255, 255, 0.25);
+  border: var(--border);
+  backdrop-filter: blur(8px);
+  transition: var(--transition-in);
+  font-family: inherit;
+  letter-spacing: 1px;
+}
 .btn-clear {
-  width: 400px;
-  max-width: 75%;
-  margin: 0 auto;
+  width: min(55ch, 100% - 1rem);
+  margin-inline: auto;
   font-weight: 200;
   padding: 0.6rem 2rem;
   border-radius: var(--border-radius);
@@ -144,47 +166,5 @@
   transition: var(--transition-in);
 }
 
-.text-red {
-  color: red;
-}
-
-/* Items */
-
-.items {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0.4rem;
-}
-
-.items li {
-  display: flex;
-  justify-content: space-between;
-  width: 400px;
-  max-width: 95%;
-  margin: 6px 0;
-  font-weight: 200;
-  padding: 0.6rem 2rem;
-  border-radius: var(--border-radius);
-  color: var(--primary-color);
-  text-shadow: var(--text-shadow);
-  background: rgba(255, 255, 255, 0.25);
-  border: var(--border);
-  backdrop-filter: blur(8px);
-  transition: var(--transition-in);
-  font-family: inherit;
-  letter-spacing: 1px;
-}
-
 @media (max-width: 500px) {
-  .items li,
-  .btn-clear {
-    width: 100%;
-  }
-  .btn-clear {
-    width: 90%;
-    margin: 0 auto;
-  }
 }
