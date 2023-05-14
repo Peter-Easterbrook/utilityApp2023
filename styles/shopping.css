@@ -43,11 +43,10 @@
 }
 
 .btn {
-  padding: 0.5rem 0.6rem;
+  padding: 5px 0.5rem;
   outline: none;
   border-radius: var(--border-radius);
   font-size: 1.2rem;
-  margin: 1rem 0.4rem;
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   border: var(--border);
@@ -67,14 +66,14 @@
   transform: scale(0.95);
 }
 
-.btn i {
-  font-size: 1.6rem;
-}
-.btn .fa-circle-plus {
+.btn .add {
+  font-size: 1.8rem;
   color: var(--border-color);
+  vertical-align: middle;
 }
 
-.btn .fa-pencil-alt {
+.btn .pencil {
+  font-size: 1.6rem;
   color: #f6a800;
 }
 
@@ -131,7 +130,7 @@
 .items li {
   display: flex;
   justify-content: space-between;
-  width: min(55ch, 100% - 1rem);
+  width: min(40ch, 100% - 1rem);
   margin: 4px 0;
   font-weight: 200;
   padding: 0.6rem 2rem;
@@ -146,10 +145,10 @@
   letter-spacing: 1px;
 }
 .btn-clear {
-  width: min(55ch, 100% - 1rem);
+  width: min(57ch, 100%);
   margin-inline: auto;
   font-weight: 200;
-  padding: 0.6rem 2rem;
+  padding: 0.6rem 0;
   border-radius: var(--border-radius);
   color: var(--primary-color);
   text-shadow: var(--text-shadow);

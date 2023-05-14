@@ -106,7 +106,8 @@ function setItemToEdit(item) {
 
   // Change color of input text
   item.classList.add('edit-mode');
-  formBtn.innerHTML = '<i class="fas fa-pencil-alt"></i>';
+  formBtn.innerHTML =
+    '<span class="material-symbols-outlined pencil">edit</span>';
   formBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.25);';
   itemInput.value = item.textContent.trim();
   itemInput.focus();
@@ -156,7 +157,8 @@ function checkUI() {
   clearBtn.style.display = items.length ? 'block' : 'none';
   itemFilter.style.display = items.length ? 'block' : 'none';
   itemInput.value = '';
-  formBtn.innerHTML = '<i class="fas fa-circle-plus"></i>';
+  formBtn.innerHTML =
+    '<span class="material-symbols-outlined add">add_circle</span>';
   formBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.25);';
   isEditMode = false;
 }
