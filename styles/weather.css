@@ -15,7 +15,7 @@
 }
 
 .search-box {
-  max-width: 400px;
+  max-width: 600px;
   padding: 0.6rem 1rem;
   color: var(--primary-color);
   font-weight: 300;
@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: min(590px, 100%);
+  width: min(600px, 100%);
   margin: 0 auto;
   text-align: center;
 }
@@ -60,7 +60,7 @@
   align-items: center;
   text-align: center;
   justify-content: space-between;
-  margin: -0.2rem auto;
+  margin: 0 auto;
   width: 100%;
   max-width: 590px;
 }
@@ -70,7 +70,7 @@
   font-weight: 300;
   color: var(--primary-color);
   text-shadow: var(--text-shadow);
-  padding: 0 1rem;
+  padding: 0 0.4rem;
 }
 
 .image {
