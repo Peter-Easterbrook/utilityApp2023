@@ -148,7 +148,7 @@
 //   }
 // })();
 (() => {
-  const serverBaseUrl = 'http://localhost:3001';
+  const serverBaseUrl = 'http://localhost:10000';
 
   const fetchWeatherData = async (city) => {
     const weatherUrl = `${serverBaseUrl}/weather?city=${city}`;

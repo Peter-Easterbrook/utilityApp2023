@@ -7,7 +7,7 @@ const path = require('path');
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 10000;
 
 const API_KEY = process.env.OPEN_WEATHER_API_KEY;
 
