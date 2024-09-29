@@ -1,7 +1,7 @@
 // (() => {
 //   //Weather app
 //   const api = {
-//     key: 'eb50a5f89225d9b84dd13172cdac0cdb',
+//     key: '.env.OPEN_WEATHER_API_KEY',
 //     base: 'https://api.openweathermap.org/data/3.0/onecall?',
 //   };
 
