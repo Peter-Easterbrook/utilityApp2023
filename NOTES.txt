@@ -1,1 +1,0 @@
-Having added a server file (index.js) in order to safely use API keys,I have also uploaded this app tp Render and Vercel, both with issues
