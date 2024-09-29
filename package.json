@@ -1,0 +1,25 @@
+{
+  "name": "utilityapp2023",
+  "version": "1.0.0",
+  "description": "Useful app for day-2-day tasks",
+  "main": "index.js",
+  "scripts": {
+    "start": "node scripts/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Peter-Easterbrook/utilityApp2023.git"
+  },
+  "author": "OneStepWeb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Peter-Easterbrook/utilityApp2023/issues"
+  },
+  "homepage": "https://github.com/Peter-Easterbrook/utilityApp2023#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "node-fetch": "^3.3.2"
+  }
+}
