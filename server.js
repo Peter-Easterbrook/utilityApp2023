@@ -12,6 +12,8 @@ const API_KEY = process.env.OPEN_WEATHER_API_KEY;
 
 app.use(cors());
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/weather', async (req, res) => {
   const { city } = req.query;
 
