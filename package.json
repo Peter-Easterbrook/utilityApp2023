@@ -4,7 +4,7 @@
   "description": "Useful app for day-2-day tasks",
   "main": "index.js",
   "scripts": {
-    "start": "node scripts/server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
