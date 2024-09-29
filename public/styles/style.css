@@ -141,7 +141,7 @@ a {
   top: 0;
   bottom: 0;
   margin: auto 0;
-  background: transparent url('../public/Moon.png') no-repeat center;
+  background: transparent url('../Moon.png') no-repeat center;
   background-size: contain;
   filter: var(--drop-shadow);
   transition: var(--transition-in);
@@ -157,7 +157,7 @@ a {
   transform: translateX(35px);
   height: 60px;
   width: 60px;
-  background: transparent url('../public/sun1.png') no-repeat center;
+  background: transparent url('../sun1.png') no-repeat center;
   background-size: contain;
   filter: var(--drop-shadow);
 }
