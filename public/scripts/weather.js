@@ -1,97 +1,72 @@
 (() => {
-  const serverBaseUrl = 'http://localhost:10000';
+  const CONFIG = {
+    serverBaseUrl: 'http://localhost:10000',
+    timeFormat: {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+    },
+  };
 
   const fetchWeatherData = async (city) => {
-    const weatherUrl = `${serverBaseUrl}/weather?city=${city}`;
-    try {
-      const weatherResponse = await fetch(weatherUrl);
-      if (!weatherResponse.ok) {
-        throw new Error('Failed to fetch weather data');
-      }
-      const weatherData = await weatherResponse.json();
-      return weatherData;
-    } catch (error) {
-      console.error('Error fetching weather data:', error);
-      throw error;
+    if (!city?.trim()) {
+      throw new Error('City name is required');
     }
+
+    const weatherUrl = `${
+      CONFIG.serverBaseUrl
+    }/weather?city=${encodeURIComponent(city)}`;
+    const response = await fetch(weatherUrl);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return response.json();
   };
 
-  const getWeather = async (city) => {
-    try {
-      const weatherData = await fetchWeatherData(city);
-      return weatherData;
-    } catch (error) {
-      console.error('Error getting weather data:', error);
-      alert('Error fetching weather data: ' + error.message);
-    }
+  const formatTime = (timestamp) => {
+    return new Date(timestamp * 1000)
+      .toLocaleTimeString('en-US', CONFIG.timeFormat)
+      .toLowerCase();
   };
 
-  const searchbox = document.querySelector('.search-box');
-  searchbox.addEventListener('keypress', setQuery);
-
-  function setQuery(evt) {
-    if (evt.key === 'Enter') {
-      getResults(searchbox.value);
-      searchbox.value = '';
-    }
-  }
-
-  function getResults(query) {
-    getWeather(query).then(displayResults);
-  }
+  const updateWeatherUI = (element, value) => {
+    const el = document.querySelector(element);
+    if (el) el.innerText = value;
+  };
 
   function displayResults(weather) {
     if (!weather) return;
 
-    let city = document.querySelector('.city');
-    city.innerText = `${weather.timezone}`;
+    updateWeatherUI('.city', weather.timezone);
+    updateWeatherUI('.date', dateBuilder(new Date()));
+    updateWeatherUI('.sunrise', formatTime(weather.current.sunrise));
+    updateWeatherUI('.sunset', formatTime(weather.current.sunset));
 
-    let now = new Date();
-    let date = document.querySelector('.date');
-    date.innerText = dateBuilder(now);
+    const weatherIcon = document.querySelector('.image .weather-icon');
+    if (weatherIcon) {
+      weatherIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png" 
+        onerror="this.onerror=null; this.src='/images/weather-default.png'"/>`;
+    }
 
-    let sunrise = document.querySelector('.sunrise');
-    sunrise.innerText = `${new Date(weather.current.sunrise * 1000)
-      .toLocaleTimeString('en-US', {
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true,
-      })
-      .toLowerCase()}`;
+    const temp = document.querySelector('.temp');
+    if (temp) {
+      temp.innerHTML = `${Math.round(weather.current.temp)}<span>°C</span>`;
+    }
 
-    let sunset = document.querySelector('.sunset');
-    sunset.innerText = `${new Date(weather.current.sunset * 1000)
-      .toLocaleTimeString('en-US', {
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true,
-      })
-      .toLowerCase()}`;
-
-    let weatherIcon = document.querySelector('.image .weather-icon');
-    weatherIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png" 
-      onerror="this.onerror=null; this.src='/images/weather-default.png'"/>`;
-
-    let temp = document.querySelector('.temp');
-    temp.innerHTML = `${Math.round(weather.current.temp)}<span>\xB0C</span>`;
-
-    let weather_el = document.querySelector('.weather');
-    weather_el.innerText =
+    updateWeatherUI(
+      '.weather',
       weather.current.weather[0].description.charAt(0).toUpperCase() +
-      weather.current.weather[0].description.slice(1);
-
-    let wind = document.querySelector('.wind');
-    wind.innerText = `${weather.current.wind_speed} km/h`;
-
-    let humidity = document.querySelector('.humidity');
-    humidity.innerText = `${weather.current.humidity}%`;
-
-    let visibility = document.querySelector('.visibility');
-    visibility.innerText = `${weather.current.visibility} m`;
+        weather.current.weather[0].description.slice(1)
+    );
+    updateWeatherUI('.wind', `${weather.current.wind_speed} km/h`);
+    updateWeatherUI('.humidity', `${weather.current.humidity}%`);
+    updateWeatherUI('.visibility', `${weather.current.visibility} m`);
   }
 
-  function dateBuilder(d) {
-    let months = [
+  const dateBuilder = (date) => {
+    const months = [
       'January',
       'February',
       'March',
@@ -105,7 +80,7 @@
       'November',
       'December',
     ];
-    let days = [
+    const days = [
       'Sunday',
       'Monday',
       'Tuesday',
@@ -115,11 +90,33 @@
       'Saturday',
     ];
 
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
+    return `${days[date.getDay()]} ${date.getDate()} ${
+      months[date.getMonth()]
+    } ${date.getFullYear()}`;
+  };
 
-    return `${day} ${date} ${month} ${year}`;
+  const handleSearch = async (event) => {
+    if (event.key === 'Enter') {
+      const searchbox = event.target;
+      const query = searchbox.value.trim();
+
+      if (!query) return;
+
+      try {
+        const weatherData = await fetchWeatherData(query);
+        displayResults(weatherData);
+      } catch (error) {
+        console.error('Weather fetch error:', error);
+        alert(`Unable to get weather data: ${error.message}`);
+      } finally {
+        searchbox.value = '';
+      }
+    }
+  };
+
+  // Initialize
+  const searchbox = document.querySelector('.search-box');
+  if (searchbox) {
+    searchbox.addEventListener('keypress', handleSearch);
   }
 })();
