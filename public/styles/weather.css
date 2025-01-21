@@ -31,7 +31,6 @@
   transition: var(--transition-in);
 }
 .search-box::placeholder {
-  font-family: inherit;
   opacity: 0.4;
   color: var(--primary-color);
   font-weight: lighter;
@@ -70,7 +69,7 @@
   font-weight: 300;
   color: var(--primary-color);
   text-shadow: var(--text-shadow);
-  padding: 0 0.4rem;
+  padding: 0.5rem 0.4rem;
 }
 
 .image {

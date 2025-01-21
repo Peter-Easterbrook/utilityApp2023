@@ -27,8 +27,8 @@
 #hours-hand {
   position: absolute;
   height: 64px;
-  right: 119px;
-  bottom: 119px;
+  right: 115px;
+  bottom: 115px;
   width: 4px;
   border-radius: 16px;
   filter: var(--drop-shadow);
@@ -41,8 +41,8 @@
 #minutes-hand {
   position: absolute;
   height: 105px;
-  right: 119px;
-  bottom: 119px;
+  right: 115px;
+  bottom: 115px;
   width: 2px;
   border-radius: 3px;
   filter: var(--drop-shadow);
@@ -51,9 +51,9 @@
 }
 #seconds-hand {
   position: absolute;
-  height: 105px;
-  right: 119px;
-  bottom: 119px;
+  height: 100px;
+  right: 115px;
+  bottom: 115px;
   width: 2px;
   background-color: #ff6600;
   filter: var(--drop-shadow);

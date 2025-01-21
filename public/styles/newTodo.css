@@ -4,9 +4,9 @@
 }
 .main-header {
   font-size: 1.2rem;
-  letter-spacing: 1px;
+
   font-weight: 300;
-  font-family: inherit;
+
   text-shadow: var(--text-shadow);
 }
 
@@ -28,18 +28,17 @@
   font-size: 1.2rem;
   margin: 1rem 0.4rem;
   color: var(--primary-color);
-  font-family: inherit;
+
   font-weight: 200;
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   font-weight: 300;
-  letter-spacing: 1px;
+
   text-shadow: var(--text-shadow);
   transition: var(--transition-in);
 }
 .task-name::placeholder {
-  font-family: inherit;
   color: var(--primary-color);
   font-weight: 200;
 }
@@ -54,9 +53,9 @@
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  font-family: inherit;
+
   font-weight: 200;
-  letter-spacing: 1px;
+
   text-shadow: var(--text-shadow);
   transition: var(--transition-in);
   cursor: pointer;
@@ -87,7 +86,7 @@
   display: flex;
   font-size: clamp(0.8rem, 1.5vw, 1.2rem);
   font-weight: 300;
-  letter-spacing: 1px;
+
   text-shadow: var(--text-shadow);
   margin: 0 0.2rem;
 }
