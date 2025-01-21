@@ -69,7 +69,8 @@
       .toLowerCase()}`;
 
     let weatherIcon = document.querySelector('.image .weather-icon');
-    weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png"/>`;
+    weatherIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png" 
+      onerror="this.onerror=null; this.src='/images/weather-default.png'"/>`;
 
     let temp = document.querySelector('.temp');
     temp.innerHTML = `${Math.round(weather.current.temp)}<span>\xB0C</span>`;
