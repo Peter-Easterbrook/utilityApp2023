@@ -71,7 +71,28 @@ app.get('/weather', async (req, res) => {
   }
 });
 
-// Default route to serve the index.html for your app
+// Serve specific HTML files
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.get('/index.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.get('/weather.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'weather.html'));
+});
+
+app.get('/newTodo.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'newTodo.html'));
+});
+
+app.get('/shopping.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'shopping.html'));
+});
+
+// Fallback for SPA routing (only for unmatched routes)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });

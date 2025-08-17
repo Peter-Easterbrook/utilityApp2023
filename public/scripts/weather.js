@@ -1,6 +1,19 @@
 (() => {
+  // Detect environment and set appropriate server URL
+  const getServerBaseUrl = () => {
+    // If running in development (localhost)
+    if (
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1'
+    ) {
+      return 'http://localhost:10000';
+    }
+    // If running on Vercel, mobile, or any other deployment, use same origin
+    return window.location.origin;
+  };
+
   const CONFIG = {
-    serverBaseUrl: 'http://localhost:10000',
+    serverBaseUrl: getServerBaseUrl(),
     timeFormat: {
       hour: 'numeric',
       minute: 'numeric',
@@ -16,13 +29,30 @@
     const weatherUrl = `${
       CONFIG.serverBaseUrl
     }/weather?city=${encodeURIComponent(city)}`;
-    const response = await fetch(weatherUrl);
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    console.log('Fetching weather from:', weatherUrl); // Debug log
+    console.log('Current location:', window.location.origin); // Debug log
+
+    try {
+      const response = await fetch(weatherUrl);
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Server response error:', errorText);
+        throw new Error(
+          `HTTP error! status: ${response.status} - ${errorText}`
+        );
+      }
+
+      return response.json();
+    } catch (error) {
+      console.error('Fetch error details:', error);
+      // Check if it's a network error
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        throw new Error('Network error - unable to connect to server');
+      }
+      throw error;
     }
-
-    return response.json();
   };
 
   const formatTime = (timestamp) => {
