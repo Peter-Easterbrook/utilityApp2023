@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Weather API</title>
+  </head>
+  <body>
+    <h1>Weather API Test</h1>
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="testWeather()">Test Weather</button>
+    <div id="result"></div>
+
+    <script>
+      async function testWeather() {
+        const city = document.getElementById('cityInput').value;
+        const result = document.getElementById('result');
+
+        try {
+          const response = await fetch(
+            `/api/weather?city=${encodeURIComponent(city)}`
+          );
+          const data = await response.json();
+          result.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+        } catch (error) {
+          result.innerHTML = 'Error: ' + error.message;
+        }
+      }
+    </script>
+  </body>
+</html>

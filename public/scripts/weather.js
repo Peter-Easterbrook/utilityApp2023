@@ -12,8 +12,21 @@
     return window.location.origin;
   };
 
+  const getWeatherEndpoint = () => {
+    // If running in development (localhost)
+    if (
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1'
+    ) {
+      return '/weather';
+    }
+    // If running on Vercel or production, use API route
+    return '/api/weather';
+  };
+
   const CONFIG = {
     serverBaseUrl: getServerBaseUrl(),
+    weatherEndpoint: getWeatherEndpoint(),
     timeFormat: {
       hour: 'numeric',
       minute: 'numeric',
@@ -26,9 +39,9 @@
       throw new Error('City name is required');
     }
 
-    const weatherUrl = `${
-      CONFIG.serverBaseUrl
-    }/weather?city=${encodeURIComponent(city)}`;
+    const weatherUrl = `${CONFIG.serverBaseUrl}${
+      CONFIG.weatherEndpoint
+    }?city=${encodeURIComponent(city)}`;
 
     console.log('Fetching weather from:', weatherUrl); // Debug log
     console.log('Current location:', window.location.origin); // Debug log
