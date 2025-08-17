@@ -1,9 +1,18 @@
+.time-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1; /* Take up remaining space in main */
+  width: 100%;
+  min-height: 0; /* Allow flexbox to work properly */
+}
 .clock-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2rem auto 1rem;
+  margin: 0 auto; /* Remove large margins */
 }
 
 .clock {
@@ -90,7 +99,7 @@
   justify-content: center;
   width: 360px;
   align-items: center;
-  margin: 2rem 0;
+  margin: 0; /* Remove large margins */
   text-shadow: var(--text-shadow);
 }
 
@@ -109,7 +118,7 @@
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-top: 4rem;
+  margin-top: 1rem; /* Reduced from 4rem */
   padding-bottom: 1rem;
   vertical-align: middle;
   transition: var(--transition-in);

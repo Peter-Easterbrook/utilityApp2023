@@ -76,6 +76,7 @@ html::-webkit-scrollbar {
 
 main {
   width: min(620px, 100% - 1rem);
+  min-height: calc(100vh - 60px); /* Full height minus nav */
   display: flex;
   flex-direction: column;
   text-align: center;
