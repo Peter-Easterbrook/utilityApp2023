@@ -20,8 +20,12 @@
     ) {
       return '/weather';
     }
-    // If running on Vercel or production, use API route
-    return '/api/weather';
+    // If running on Vercel (uses serverless functions)
+    if (window.location.hostname.includes('vercel.app')) {
+      return '/api/weather';
+    }
+    // If running on Render or other traditional hosting (uses Express routes)
+    return '/weather';
   };
 
   const CONFIG = {

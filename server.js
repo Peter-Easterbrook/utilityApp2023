@@ -19,9 +19,14 @@ const API_CONFIG = {
 
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, 'public')));
+// Simple test endpoint
+app.get('/api/test', (req, res) => {
+  res.json({ status: 'API is working', timestamp: new Date().toISOString() });
+});
 
+// API routes MUST come before static file serving
 app.get('/weather', async (req, res) => {
+  console.log('Weather API endpoint hit with query:', req.query);
   const { city } = req.query;
 
   if (!city?.trim()) {
@@ -70,6 +75,9 @@ app.get('/weather', async (req, res) => {
     });
   }
 });
+
+// Static file serving comes after API routes
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve specific HTML files
 app.get('/', (req, res) => {
