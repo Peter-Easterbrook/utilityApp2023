@@ -101,10 +101,10 @@ app.get('/shopping.html', (req, res) => {
 });
 
 // Fallback for SPA routing (only for unmatched routes)
-app.get('/:path*', (req, res) => {
+app.get('/*path', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on port ${port}`);
 });
