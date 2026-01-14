@@ -21,7 +21,7 @@ app.use(cors());
 
 // Simple test endpoint
 app.get('/api/test', (req, res) => {
-  res.json({ status: 'API is working', timestamp: new Date().toISOString() });
+  return res.json({ status: 'API is working', timestamp: new Date().toISOString() });
 });
 
 // API routes MUST come before static file serving
@@ -66,10 +66,10 @@ app.get('/weather', async (req, res) => {
     }
 
     const weatherData = await weatherResponse.json();
-    res.json(weatherData);
+    return res.json(weatherData);
   } catch (error) {
     console.error('Weather data fetch error:', error);
-    res.status(500).json({
+    return res.status(500).json({
       error: 'Error fetching weather data',
       details: error.message,
     });
