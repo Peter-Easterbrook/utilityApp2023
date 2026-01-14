@@ -101,7 +101,7 @@ app.get('/shopping.html', (req, res) => {
 });
 
 // Fallback for SPA routing (only for unmatched routes)
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
